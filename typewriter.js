@@ -1,7 +1,16 @@
 // Variables
 const sentence = "hello there from lighthouse labs";
+const length = sentence.length;
+let time = 0;
 
-for (const char of sentence) {
+for (let c = 0; c < length; c++) {
+  let char = sentence[c];
   //console.log(char);
-  process.stdout.write(char);
+  setTimeout(() => {
+    if (c === length - 1) {
+      char += `\n`;
+    }
+    process.stdout.write(char);
+  }, time);
+  time += 50;
 }
